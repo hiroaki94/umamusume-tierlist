@@ -14,7 +14,7 @@ function defaultGMState() {
         currentState: "speed",
         show: false,
         general: {
-            bondPerDay: 15,
+            bondPerDay: 10,
             races: [10,2,0,5],
             unbondedTrainingGain: [
                 [10,0,3,0,0,5,19],
@@ -102,7 +102,7 @@ function defaultGLState() {
         currentState: "speed",
         show: false,
         general: {
-            bondPerDay: 20,
+            bondPerDay: 10,
             races: [7,2,0,3],
             unbondedTrainingGain: [
                 [8,0,4,0,0,2,19],
@@ -194,7 +194,7 @@ function defaultMANTState() {
         currentState: "speed",
         show: false,
         general: {
-            bondPerDay: 20,
+            bondPerDay: 10,
             races: [15,10,2,3],
             unbondedTrainingGain: [
                 [8,0,4,0,0,2,19],
@@ -280,7 +280,7 @@ function defaultAoharuState() {
         currentState: "wisdom",
         show: false,
         general: {
-            bondPerDay: 20,
+            bondPerDay: 10,
             races: [7,2,0,3],
             unbondedTrainingGain: [
                 [8,0,4,0,0,4,19],
@@ -372,7 +372,7 @@ function defaultURAState() {
         currentState: "speed",
         show: false,
         general: {
-            bondPerDay: 20,
+            bondPerDay: 10,
             races: [7,2,0,3],
             unbondedTrainingGain: [
                 [11,0,6,0,0,4,21],
@@ -639,7 +639,7 @@ class Weights extends React.Component {
                     <div className="weight-row">
                         <div className="section-header">Bond Rate</div>
                         <div className="section-explanation">
-                            The fewer bond per turn, the more Starting Bond matters.<br/>
+                            The fewer bond per turn, the more Initial Friendship Gauge matters.<br/>
                             This is the bond over every card, so 14 = two cards per day, etc.
                         </div>
                         <label htmlFor="bondPerDay">Bond Gained per Turn:</label>
@@ -681,7 +681,7 @@ class Weights extends React.Component {
                         <NumericInput onChange={this.onSettingChanged} type="number" id="stats.2" value={this.state[this.state.currentState].stats[2]} min={0} max={3} step={0.1}/>
                         <label htmlFor="stats.3">Guts</label>
                         <NumericInput onChange={this.onSettingChanged} type="number" id="stats.3" value={this.state[this.state.currentState].stats[3]} min={0} max={3} step={0.1}/>
-                        <label htmlFor="stats.4">Wisdom</label>
+                        <label htmlFor="stats.4">Wit</label>
                         <NumericInput onChange={this.onSettingChanged} type="number" id="stats.4" value={this.state[this.state.currentState].stats[4]} min={0} max={3} step={0.1}/>
                         <br/><br/><label htmlFor="stats.5">Skill Points</label>
                         <NumericInput onChange={this.onSettingChanged} type="number" id="stats.5" value={this.state[this.state.currentState].stats[5]} min={0} max={3} step={0.1}/>
@@ -689,9 +689,9 @@ class Weights extends React.Component {
                         <NumericInput onChange={this.onSettingChanged} type="number" id="stats.6" value={this.state[this.state.currentState].stats[6]} min={0} max={3} step={0.1}/>
                     </div>
                     <div className="weight-row">
-                        <div className="section-header">Average Motivation</div>
+                        <div className="section-header">Average Mood</div>
                         <div className="section-explanation">
-                            You get 10% per motivation stage. This affects Motivation Bonus.
+                            You get 10% per mood stage. This affects Mood Effect.
                         </div>
                         <input type="range" onChange={this.onMotivationChanged} min={-0.2} max={0.2} step={0.05} value={this.state.general.motivation} className="slider" id="motivation"/>
                         <label htmlFor="minimum">{this.state.general.motivation * 100}%</label>
@@ -748,7 +748,7 @@ class Weights extends React.Component {
                     <NumericInput onChange={this.onGeneralSettingChanged} type="number" id="umaBonus.2" value={this.state.general.umaBonus[2]} min={0.7} max={1.3} step={0.01} precision={2}/>
                     <label htmlFor="umaBonus.3">Guts</label>
                     <NumericInput onChange={this.onGeneralSettingChanged} type="number" id="umaBonus.3" value={this.state.general.umaBonus[3]} min={0.7} max={1.3} step={0.01} precision={2}/>
-                    <label htmlFor="umaBonus.4">Wisdom</label>
+                    <label htmlFor="umaBonus.4">Wit</label>
                     <NumericInput onChange={this.onGeneralSettingChanged} type="number" id="umaBonus.4" value={this.state.general.umaBonus[4]} min={0.7} max={1.3} step={0.01} precision={2}/>
                 </div>
             </div>

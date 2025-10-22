@@ -1,6 +1,6 @@
 import React from 'react';
 import SupportCard from './SupportCard';
-import events from '../card-events';
+import events from '../../card-events';
 import { supportCardProperties } from '../constants';
 import Select from 'react-select';
 
@@ -125,7 +125,7 @@ const raceRewards = [
 
 function processCards(cards, weights, selectedCards) {
     let processedCards = [];
-    selectedCards = selectedCards.slice();
+    selectedCards = JSON.parse(JSON.stringify(selectedCards));
     
     // Calculate some stuff here so we don't have to do it a million times later
     let presentTypes = [false,false,false,false,false,false,false];
