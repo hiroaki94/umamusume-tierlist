@@ -3,7 +3,7 @@ from bs4 import BeautifulSoup
 import time
 
 BASE_URL = "https://xn--gck1f423k.xn--1bvt37a.tools/supports/{}/event"
-CARD_IDS = [30055,30056, 30057]  # Example IDs
+CARD_IDS = [30136, 30137, 30138]  # Example IDs
 
 TARGET_STATS = ["スピード", "スタミナ", "パワー", "根性", "賢さ", "体力", "スキルPt", "絆"]
 
@@ -55,7 +55,7 @@ def extract_events(html):
 
     return results
 
-for card_id in CARD_IDS:
+for card_id in range(30263,30270):
     url = BASE_URL.format(card_id)
     r = requests.get(url)
     r.encoding = r.apparent_encoding  # Ensure proper Japanese decoding
